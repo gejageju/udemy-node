@@ -4,8 +4,9 @@ const path= require('path');
 const rootDir = require('./util/path.js')
 
 const app=express();
-const adminData= require('./routes/admin.js');
+const adminRoutes= require('./routes/admin.js');
 const shopRoutes= require('./routes/shop.js');
+const errorsController = require('./controllers/errors.js')
 
 app.set('view engine','ejs');
 app.set('views','views')
@@ -13,12 +14,10 @@ app.set('views','views')
 app.use(bodyParser.urlencoded( {extended : false}));
 app.use(express.static(path.join(rootDir,'public')));
 
-app.use('/admin',adminData.routes);
+app.use('/admin',adminRoutes);
 app.use(shopRoutes);
 
-app.use((req,res,next)=>{
-    res.status(404).render('error404',{docTitle : 'Page Not Found' , path : ''});
-})
+app.use(errorsController.error404)
 
 //module.exports = path.dirname(require.main.filename);
-app.listen(3000);
+app.listen(8080);
