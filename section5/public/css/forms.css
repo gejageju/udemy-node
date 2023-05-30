@@ -8,13 +8,21 @@
    margin: 1rem 0;
 }
 .form-control label,
-.form-control input {
+.form-control input,
+.form-control textarea {
    display: block;
    width: 100%;
+   margin-bottom: 0.25rem;
 }
 
-.form-control input{
-   border: 1px solid rgb(56, 188, 65);
+.form-control input,
+.form-control textarea{
+   border: 1px solid ;
    font: inherit;
    border-radius: 2px;
+}
+
+.form-control input:focus,
+.form-control textarea:focus{
+    outline-color: rgb(56, 188, 65);
 }
