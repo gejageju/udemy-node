@@ -10,9 +10,11 @@
   "author": "Gejalakshmi Prabaharan",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-handlebars": "3.0",
+    "mysql2": "^3.4.2",
     "pug": "^3.0.2"
   },
   "devDependencies": {
